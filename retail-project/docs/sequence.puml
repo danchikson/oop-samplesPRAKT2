@@ -1,0 +1,29 @@
+@startuml
+actor Manager
+participant SupplyOrder
+actor Supplier
+actor Logistician
+participant DeliveryService
+
+Manager -> SupplyOrder : createOrder()
+activate SupplyOrder
+SupplyOrder --> Manager : orderCreated
+deactivate SupplyOrder
+
+Supplier -> SupplyOrder : confirmOrder()
+activate SupplyOrder
+SupplyOrder -> SupplyOrder : setStatus("Confirmed")
+Supplier -> SupplyOrder : issueInvoice()
+deactivate SupplyOrder
+
+Logistician -> SupplyOrder : planDelivery()
+activate Logistician
+Logistician -> DeliveryService : ship(order)
+activate DeliveryService
+DeliveryService --> Logistician : trackingNumber
+deactivate DeliveryService
+Logistician -> SupplyOrder : setStatus("Shipped")
+deactivate Logistician
+
+Manager -> SupplyOrder : processReturn() (if needed)
+@enduml

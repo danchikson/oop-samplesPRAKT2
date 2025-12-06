@@ -1,0 +1,26 @@
+@startuml
+left to right direction
+actor "Менеджер магазину" as Manager
+actor "Постачальник" as Supplier
+actor "Логіст" as Logistician
+
+rectangle "Система Ритейл" {
+  usecase "Створити замовлення" as UC1
+  usecase "Підтвердити замовлення" as UC2
+  usecase "Виставити накладну" as UC3
+  usecase "Планувати доставку" as UC4
+  usecase "Відстежити доставку" as UC5
+  usecase "Оформити повернення" as UC6
+}
+
+Manager --> UC1
+Manager --> UC6
+Supplier --> UC2
+Supplier --> UC3
+Logistician --> UC4
+Logistician --> UC5
+
+UC1 ..> UC2 : include
+UC2 ..> UC3 : include
+UC3 ..> UC4 : include
+@enduml

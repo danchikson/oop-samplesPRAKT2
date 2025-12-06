@@ -1,0 +1,48 @@
+@startuml
+interface ISupplyPlan {
+    +executePlan(): void
+}
+
+abstract class ParticipantSupply {
+    -name: String
+    +getName(): String
+}
+
+class Manager extends ParticipantSupply {
+    +createOrder(order: SupplyOrder): void
+    +processReturn(order: SupplyOrder): void
+}
+
+class Supplier extends ParticipantSupply {
+    +confirmOrder(order: SupplyOrder): void
+    +issueInvoice(order: SupplyOrder): void
+}
+
+class Logistician extends ParticipantSupply implements ISupplyPlan {
+    +planDelivery(order: SupplyOrder): void
+    +trackDelivery(order: SupplyOrder): void
+    +executePlan(): void
+}
+
+class SupplyOrder {
+    -id: int
+    -status: String
+    -positions: List<OrderPosition>
+    +addPosition(pos: OrderPosition): void
+    +setStatus(status: String): void
+}
+
+class OrderPosition {
+    -itemName: String
+    -quantity: int
+    -price: double
+}
+
+class DeliveryService {
+    +ship(order: SupplyOrder): void
+}
+
+Manager ..> SupplyOrder : creates
+SupplyOrder *-- OrderPosition : contains
+Logistician ..> DeliveryService : uses
+@enduml

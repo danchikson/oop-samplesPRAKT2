@@ -1,0 +1,19 @@
+@startuml
+[*] --> Created : Менеджер створює
+
+state Created {
+}
+
+Created --> Confirmed : Постачальник підтверджує
+Confirmed --> Invoiced : Постачальник виставляє накладну
+Invoiced --> Shipping : Логіст планує доставку
+
+state Shipping {
+}
+
+Shipping --> Delivered : Доставка завершена
+Delivered --> [*]
+
+Delivered --> Returned : Менеджер оформлює повернення
+Returned --> [*]
+@enduml
