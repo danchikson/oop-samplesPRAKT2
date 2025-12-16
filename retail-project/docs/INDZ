@@ -1,0 +1,177 @@
+🔴 CRITICAL — FILE OVERWRITE MODE
+IMPORTANT:
+You MUST work inside the CURRENT repository.
+Do NOT create a new project.
+Do NOT create duplicate files or folders.
+
+If a file already exists, you MUST COMPLETELY REPLACE its contents.
+Reuse existing folders if they exist.
+Create new files ONLY if they do not exist yet.
+Do NOT rename files.
+
+1️⃣ Role
+
+You are GitHub Copilot acting as a senior software engineer.
+
+2️⃣ Source of Truth
+
+Use the existing Java repository oop-samplesPRAKT2 as the reference.
+
+The Java project demonstrates:
+
+Employee class
+
+Inheritance
+
+Polymorphism example
+
+Basic OOP principles
+
+You must replicate the SAME domain logic, but NOT in Java.
+
+3️⃣ Goal
+
+Modify the current repository so that it contains OOP implementations in four languages:
+
+C#
+
+Python
+
+TypeScript
+
+PHP
+
+All implementations must represent the same Employee + Polymorphism logic as the Java version.
+
+4️⃣ Required Folder Structure
+csharp/
+python/
+typescript/
+php/
+
+
+⚠️ If these folders already exist — reuse them.
+⚠️ If they do not exist — create them.
+
+5️⃣ Domain Model (STRICTLY MATCH JAVA LOGIC)
+Base Class: Employee
+
+Fields:
+
+name
+
+salary
+
+Use encapsulation (private/protected fields)
+
+Method that can be overridden:
+
+salary calculation
+
+or description output
+
+Derived Class: Manager
+
+Inherits from Employee
+
+Overrides at least one method
+
+Adds manager-specific behavior
+
+6️⃣ Polymorphism Requirement (MANDATORY)
+
+In EACH language:
+
+Create a collection of Employee
+
+Store both Employee and Manager objects
+
+Call the same method on all objects
+
+Demonstrate runtime polymorphism
+
+This must correspond to PolymorphismExample.java.
+
+7️⃣ Language-Specific Rules
+🔹 C#
+
+Use abstract or virtual/override
+
+Use List<Employee>
+
+Entry point: Main
+
+🔹 Python
+
+Use base class + overridden methods
+
+Use list of objects
+
+Follow PEP8
+
+🔹 TypeScript
+
+Use class, extends
+
+Strong typing
+
+Array of Employee
+
+🔹 PHP
+
+PHP 8+
+
+Typed properties
+
+abstract or overridden methods
+
+8️⃣ Output Requirement
+
+Program output must be semantically identical to Java, e.g.:
+
+Employee: Ivan, Salary: 15000
+Manager: Olena, Salary: 25000
+
+
+Exact wording may differ, logic must match.
+
+9️⃣ README.md (REPLACE CONTENT)
+
+Completely replace README.md with:
+
+Description of Practical Assignment №2
+
+Explanation of OOP principles
+
+Description of Employee polymorphism example
+
+Instructions how to run:
+
+C#
+
+Python
+
+TypeScript
+
+PHP
+
+Conclusion for university report
+
+🔒 Code Rules
+
+NO Java code
+
+Clean structure
+
+Identical logic in all languages
+
+No external libraries
+
+Fully runnable code
+
+🔚 FINAL COMMAND
+Apply this instruction to the current repository.
+Replace existing files where necessary.
+Do NOT create duplicates.
+
+✅ END OF DOCUMENT
